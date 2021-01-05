@@ -1,6 +1,6 @@
 package by.andersen.controller;
 
-import by.andersen.pojo.User;
+import by.andersen.pojo.Person;
 import by.andersen.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,12 +13,12 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user")
-    public User getUser(@RequestParam Long id) {
+    public Person getUser(@RequestParam Long id) {
         return userService.findById(id);
     }
     @PostMapping
-    public String create(@RequestParam User user) {
-        userService.createUser(user);
+    public String create(@RequestParam Person person) {
+        userService.createUser(person);
         return "HEY HO";
     }
 

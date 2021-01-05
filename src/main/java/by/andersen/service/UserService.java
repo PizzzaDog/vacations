@@ -1,8 +1,7 @@
 package by.andersen.service;
 
-import by.andersen.pojo.User;
+import by.andersen.pojo.Person;
 import by.andersen.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,12 +13,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User findById(Long id) {
+    public Person findById(Long id) {
         return  userRepository.findById(id).get();
     }
 
-    public void createUser(User user) {
-        userRepository.save(user);
+    public void createUser(Person person) {
+        userRepository.save(person);
     }
 
 }
